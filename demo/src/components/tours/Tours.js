@@ -1,14 +1,17 @@
+import Tour from "./tour/Tour.js";
+import React from "react";
+import {Link} from 'react-router-dom'
+
 function Tours(props) {
     return (
         <>
-            <h2>Tours List</h2>
-            {
-                props.arrayData.map((item, i) => {
+            <h2>Tours list</h2>
+            {props.arrayData.map((item) => {
                     return (
                         <div key={item.id}>
-                            <h3>{item.name}</h3>
-                            <img src={item.image} alt={item.name} />
-                        </div>
+                        <Link > <Tour tour={item}/> </Link>
+                         </div>
+                        //<Tour tour = {item}/>
                     )
                 })
             }
@@ -16,3 +19,13 @@ function Tours(props) {
     )
 }
 export default Tours;
+{/* <Card style={{ width: '18rem' }}>
+<Card.Img variant={item.name} src={item.image} />
+<Card.Body>
+  <Card.Title>{item.name}</Card.Title>
+  <Card.Text>
+  {item.info}
+  </Card.Text>
+  <Button variant="primary">Go somewhere</Button>
+</Card.Body>
+</Card> */}
