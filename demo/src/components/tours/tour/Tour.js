@@ -1,29 +1,28 @@
-import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
-//import { Link } from 'react-router-dom';
-//import data from '../data/db.json'
-//import {Routes ,Route} from "react-router-dom"
-//import{useState} from 'react'
-//import image from '../data/db.json'
+import TourDetails from "../../TourDetails/TourDetails";
+import { Routes, Route } from "react-router-dom"
+import { Link } from "react-router-dom"
+import { useState } from 'react'
 
 function Tour(props) {
+
+    const [isLoggedIn, setLoggedin] = useState(false);
+    const handleLoggin = () => {
+        setLoggedin(!isLoggedIn)
+    }
     return (
         <>
-{/*             <Link to={`/city/${props.tour.id}`}>Show Details
- */}                <Card style={{ width: '18rem' }}>
-                    <Card.Img variant={props.tour.name} src={props.tour.image} ></Card.Img>
-                    <Card.Body>
-                        <Card.Title>{props.tour.name}</Card.Title>
-                        <Card.Text>
-                            {props.tour.info}
-                        </Card.Text>
-                        <Button variant="primary">Go somewhere</Button>
-                    </Card.Body>
-                </Card>
-{/*             </Link>
- */}
+
+            <div key={props.tour.id}>
+
+                <img src={props.tour.image} alt={props.tour.name} />
+                <h4>{props.tour.name}</h4>
+            </div>
         </>
     )
 }
+
+
+
+
 
 export default Tour;

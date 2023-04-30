@@ -1,6 +1,7 @@
 import Tour from "./tour/Tour.js";
 import React from "react";
 import {Link} from 'react-router-dom'
+//import data from '../data/db.json'
 
 function Tours(props) {
     return (
@@ -9,7 +10,7 @@ function Tours(props) {
             {props.arrayData.map((item) => {
                     return (
                         <div key={item.id}>
-                        <Link > <Tour tour={item}/> </Link>
+                        <Link to={`/city/${item.id}`}> <Tour tour={item}/> </Link>
                          </div>
                         //<Tour tour = {item}/>
                     )

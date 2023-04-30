@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 
 import {useParams}  from 'react-router-dom';
@@ -9,7 +8,7 @@ function TourDetails() {
     const [readMore,setReadMore] =useState(false);
     let {id}=useParams();
 
-    const result =data.filter((value)=> value.id ===id);
+    const result =data.filter((item)=> item.id ===id);
     return (
       <>
 
